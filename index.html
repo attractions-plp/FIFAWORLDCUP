@@ -21,23 +21,41 @@
   </noscript>
   <script>
     (function() {
+      var _scaleTimer = null;
+      var _retries = 0;
+
       function scaleBracket() {
-        var el = document.querySelector('#app') || document.body && document.body.firstElementChild;
-        if (!el || el.id === '__bundler_thumbnail' || el.id === '__bundler_loading') return;
-        // Reset zoom first to measure natural size
+        // Target the main bracket wrapper — try #app first, then first real child
+        var el = document.querySelector('#app');
+        if (!el) {
+          var ch = document.body && document.body.firstElementChild;
+          if (!ch || ch.id === '__bundler_thumbnail' || ch.id === '__bundler_loading') return;
+          el = ch;
+        }
+        // Reset zoom to get natural dimensions
         el.style.zoom = '';
         var nw = el.scrollWidth, nh = el.scrollHeight;
-        if (!nw || !nh) return;
+        // If the bracket hasn't rendered yet (DS still booting), retry up to 40×250ms = 10s
+        if (nw < 600 || nh < 400) {
+          if (_retries++ < 40) { _scaleTimer = setTimeout(scaleBracket, 250); }
+          return;
+        }
+        _retries = 0;
         var scale = Math.min(window.innerWidth / nw, window.innerHeight / nh);
-        // Use CSS zoom — unlike transform:scale it shrinks layout size too,
-        // so overflow:hidden on body never clips the R32 edge columns.
         el.style.zoom = scale < 1 ? scale : 1;
-        document.body.style.overflow = scale < 1 ? 'hidden' : '';
+        document.body.style.overflow = 'hidden';
       }
-      var observer = new MutationObserver(function() { setTimeout(scaleBracket, 100); });
+
+      function queueScale() {
+        clearTimeout(_scaleTimer);
+        _retries = 0;
+        _scaleTimer = setTimeout(scaleBracket, 150);
+      }
+
+      var observer = new MutationObserver(queueScale);
       document.addEventListener('DOMContentLoaded', function() {
-        observer.observe(document.body, { childList: true });
-        window.addEventListener('resize', scaleBracket);
+        observer.observe(document.body, { childList: true, subtree: false });
+        window.addEventListener('resize', function() { clearTimeout(_scaleTimer); _scaleTimer = setTimeout(scaleBracket, 100); });
       });
     })();
   </script>
