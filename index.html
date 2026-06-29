@@ -21,42 +21,24 @@
   </noscript>
   <script>
     (function() {
-      var _scaleTimer = null;
-      var _retries = 0;
-
-      function scaleBracket() {
-        // Target the main bracket wrapper — try #app first, then first real child
-        var el = document.querySelector('#app');
-        if (!el) {
-          var ch = document.body && document.body.firstElementChild;
-          if (!ch || ch.id === '__bundler_thumbnail' || ch.id === '__bundler_loading') return;
-          el = ch;
-        }
-        // Reset zoom to get natural dimensions
+      function applyZoom() {
+        var el = document.getElementById('app') || document.querySelector('x-dc');
+        if (!el) return false;
         el.style.zoom = '';
         var nw = el.scrollWidth, nh = el.scrollHeight;
-        // If the bracket hasn't rendered yet (DS still booting), retry up to 40×250ms = 10s
-        if (nw < 600 || nh < 400) {
-          if (_retries++ < 40) { _scaleTimer = setTimeout(scaleBracket, 250); }
-          return;
-        }
-        _retries = 0;
-        var scale = Math.min(window.innerWidth / nw, window.innerHeight / nh);
-        el.style.zoom = scale < 1 ? scale : 1;
-        document.body.style.overflow = 'hidden';
+        if (nw < 600 || nh < 300) return false;
+        var s = Math.min(window.innerWidth / nw, window.innerHeight / nh);
+        el.style.zoom = s < 1 ? s : '';
+        return true;
       }
 
-      function queueScale() {
-        clearTimeout(_scaleTimer);
-        _retries = 0;
-        _scaleTimer = setTimeout(scaleBracket, 150);
-      }
+      // setInterval survives document.documentElement.replaceWith() — MutationObserver
+      // targets go stale when the bundler swaps the entire document root, but window
+      // timers persist, so we poll until the bracket is fully rendered then stop.
+      var _iv = setInterval(function() { if (applyZoom()) clearInterval(_iv); }, 200);
+      setTimeout(function() { clearInterval(_iv); }, 30000);
 
-      var observer = new MutationObserver(queueScale);
-      document.addEventListener('DOMContentLoaded', function() {
-        observer.observe(document.body, { childList: true, subtree: false });
-        window.addEventListener('resize', function() { clearTimeout(_scaleTimer); _scaleTimer = setTimeout(scaleBracket, 100); });
-      });
+      window.addEventListener('resize', applyZoom);
     })();
   </script>
 </head>
