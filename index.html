@@ -24,20 +24,16 @@
       function scaleBracket() {
         var el = document.querySelector('#app') || document.body && document.body.firstElementChild;
         if (!el || el.id === '__bundler_thumbnail' || el.id === '__bundler_loading') return;
-        el.style.transformOrigin = 'top left';
-        el.style.transform = 'none';
+        // Reset zoom first to measure natural size
+        el.style.zoom = '';
         var nw = el.scrollWidth, nh = el.scrollHeight;
         if (!nw || !nh) return;
         var scale = Math.min(window.innerWidth / nw, window.innerHeight / nh);
-        if (scale < 1) {
-          el.style.transformOrigin = 'top left';
-          el.style.transform = 'scale(' + scale + ')';
-          document.body.style.overflow = 'hidden';
-        } else {
-          el.style.transform = 'none';
-        }
+        // Use CSS zoom — unlike transform:scale it shrinks layout size too,
+        // so overflow:hidden on body never clips the R32 edge columns.
+        el.style.zoom = scale < 1 ? scale : 1;
+        document.body.style.overflow = scale < 1 ? 'hidden' : '';
       }
-      // Watch for when the bundler replaces the body content
       var observer = new MutationObserver(function() { setTimeout(scaleBracket, 100); });
       document.addEventListener('DOMContentLoaded', function() {
         observer.observe(document.body, { childList: true });
