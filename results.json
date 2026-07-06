@@ -1,0 +1,32 @@
+{
+  "roundOf32": [
+    {"match": 1, "teams": ["South Africa", "Canada"], "score": "0-1", "winner": "Canada"},
+    {"match": 2, "teams": ["Germany", "Paraguay"], "score": "1-1 (PK)", "winner": "Paraguay"},
+    {"match": 3, "teams": ["Netherlands", "Morocco"], "score": "1-1 (PK)", "winner": "Morocco"},
+    {"match": 4, "teams": ["Brazil", "Japan"], "score": "2-1", "winner": "Brazil"},
+    {"match": 5, "teams": ["France", "Sweden"], "score": "3-0", "winner": "France"},
+    {"match": 6, "teams": ["Côte d'Ivoire", "Norway"], "score": "1-2", "winner": "Norway"},
+    {"match": 7, "teams": ["Mexico", "Ecuador"], "score": "2-0", "winner": "Mexico"},
+    {"match": 8, "teams": ["England", "DR Congo"], "score": "2-1", "winner": "England"},
+    {"match": 9, "teams": ["USA", "Bosnia-Herzegovina"], "score": "2-0", "winner": "USA"},
+    {"match": 10, "teams": ["Belgium", "Senegal"], "score": "3-2 (AET)", "winner": "Belgium"},
+    {"match": 11, "teams": ["Portugal", "Croatia"], "score": "2-1", "winner": "Portugal"},
+    {"match": 12, "teams": ["Spain", "Austria"], "score": "3-0", "winner": "Spain"},
+    {"match": 13, "teams": ["Colombia", "Ghana"], "score": "1-0", "winner": "Colombia"},
+    {"match": 14, "teams": ["Egypt", "Australia"], "score": "4-2 (PK)", "winner": "Egypt"},
+    {"match": 15, "teams": ["Argentina", "Cape Verde"], "score": "3-2 (AET)", "winner": "Argentina"},
+    {"match": 16, "teams": ["Switzerland", "Italy"], "score": "1-2", "winner": "Italy"}
+  ],
+  "roundOf16": [
+    {"match": 1, "teams": ["Canada", "Morocco"], "score": "0-3", "winner": "Morocco", "date": "Jul 4"},
+    {"match": 2, "teams": ["Paraguay", "France"], "score": "0-1", "winner": "France", "date": "Jul 4"},
+    {"match": 3, "teams": ["Brazil", "Norway"], "score": "1-2", "winner": "Norway", "date": "Jul 5"},
+    {"match": 4, "teams": ["Mexico", "England"], "score": "2-3", "winner": "England", "date": "Jul 5"},
+    {"match": 5, "teams": ["Portugal", "Spain"], "score": "TBD", "winner": null, "date": "Jul 6"},
+    {"match": 6, "teams": ["USA", "Belgium"], "score": "TBD", "winner": null, "date": "Jul 6"},
+    {"match": 7, "teams": ["Argentina", "Egypt"], "score": "TBD", "winner": null, "date": "Jul 7"},
+    {"match": 8, "teams": ["Switzerland", "Colombia"], "score": "TBD", "winner": null, "date": "Jul 7"}
+  ],
+  "status": "Round of 16 in progress - 4 matches completed, 4 upcoming",
+  "lastUpdated": "2026-07-06"
+}
