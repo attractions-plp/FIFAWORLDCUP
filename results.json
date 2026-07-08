@@ -28,10 +28,10 @@
     {"match": 8, "teams": ["Switzerland", "Colombia"], "score": "0-0 (PK 4-3)", "winner": "Switzerland", "date": "Jul 7", "m_id": "m96", "note": "Vargas wins on penalties"}
   ],
   "quarterFinals": [
-    {"match": 1, "teams_from": ["m89", "m90"], "teams": ["Morocco", "France"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m97", "note": "Winner m89 vs Winner m90"},
-    {"match": 2, "teams_from": ["m91", "m92"], "teams": ["Norway", "England"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m98", "note": "Winner m91 vs Winner m92"},
+    {"match": 1, "teams_from": ["m89", "m90"], "teams": ["France", "Morocco"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m97", "note": "Winner m89 vs Winner m90"},
+    {"match": 2, "teams_from": ["m91", "m92"], "teams": ["Norway", "England"], "score": "TBD", "winner": null, "date": "Jul 11", "m_id": "m98", "note": "Winner m91 vs Winner m92"},
     {"match": 3, "teams_from": ["m93", "m94"], "teams": ["Spain", "Belgium"], "score": "TBD", "winner": null, "date": "Jul 10", "m_id": "m99", "note": "Winner m93 vs Winner m94"},
-    {"match": 4, "teams_from": ["m95", "m96"], "teams": ["Argentina", "Switzerland"], "score": "TBD", "winner": null, "date": "Jul 10", "m_id": "m100", "note": "Winner m95 vs Winner m96"}
+    {"match": 4, "teams_from": ["m95", "m96"], "teams": ["Argentina", "Switzerland"], "score": "TBD", "winner": null, "date": "Jul 11", "m_id": "m100", "note": "Winner m95 vs Winner m96"}
   ],
   "semiFinals": [
     {"match": 1, "teams_from": ["m97", "m98"], "teams": ["TBD", "TBD"], "score": "TBD", "winner": null, "date": "Jul 13", "m_id": "m101", "note": "Winner m97 vs Winner m98"},
