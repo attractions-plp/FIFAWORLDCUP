@@ -24,22 +24,26 @@
     {"match": 4, "teams": ["Mexico", "England"], "score": "2-3", "winner": "England", "date": "Jul 5", "m_id": "m92"},
     {"match": 5, "teams": ["Portugal", "Spain"], "score": "0-1", "winner": "Spain", "date": "Jul 6", "m_id": "m93"},
     {"match": 6, "teams": ["USA", "Belgium"], "score": "1-4", "winner": "Belgium", "date": "Jul 6", "m_id": "m94"},
-    {"match": 7, "teams": ["Argentina", "Egypt"], "score": "TBD", "winner": null, "date": "Jul 7", "m_id": "m95"},
-    {"match": 8, "teams": ["Switzerland", "Colombia"], "score": "TBD", "winner": null, "date": "Jul 7", "m_id": "m96"}
+    {"match": 7, "teams": ["Argentina", "Egypt"], "score": "3-2", "winner": "Argentina", "date": "Jul 7", "m_id": "m95", "note": "Messi 83', Fernández 90+5'"},
+    {"match": 8, "teams": ["Switzerland", "Colombia"], "score": "0-0 (PK 4-3)", "winner": "Switzerland", "date": "Jul 7", "m_id": "m96", "note": "Vargas wins on penalties"}
   ],
   "quarterFinals": [
-    {"match": 1, "teams_from": ["m89", "m90"], "teams": ["Morocco", "France"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m97", "note": "Winner m89 vs Winner m90"},
-    {"match": 2, "teams_from": ["m91", "m92"], "teams": ["Norway", "England"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m98", "note": "Winner m91 vs Winner m92"},
+    {"match": 1, "teams_from": ["m89", "m90"], "teams": ["France", "Morocco"], "score": "TBD", "winner": null, "date": "Jul 9", "m_id": "m97", "note": "Winner m89 vs Winner m90"},
+    {"match": 2, "teams_from": ["m91", "m92"], "teams": ["Norway", "England"], "score": "TBD", "winner": null, "date": "Jul 11", "m_id": "m98", "note": "Winner m91 vs Winner m92"},
     {"match": 3, "teams_from": ["m93", "m94"], "teams": ["Spain", "Belgium"], "score": "TBD", "winner": null, "date": "Jul 10", "m_id": "m99", "note": "Winner m93 vs Winner m94"},
-    {"match": 4, "teams_from": ["m95", "m96"], "teams": ["Argentina/Egypt", "Switzerland/Colombia"], "score": "TBD", "winner": null, "date": "Jul 10", "m_id": "m100", "note": "Winner m95 vs Winner m96"}
+    {"match": 4, "teams_from": ["m95", "m96"], "teams": ["Argentina", "Switzerland"], "score": "TBD", "winner": null, "date": "Jul 11", "m_id": "m100", "note": "Winner m95 vs Winner m96"}
   ],
   "semiFinals": [
-    {"match": 1, "teams_from": ["m97", "m98"], "teams": ["Morocco vs France", "Norway vs England"], "score": "TBD", "winner": null, "date": "Jul 13", "m_id": "m101", "note": "Winner m97 vs Winner m98"},
-    {"match": 2, "teams_from": ["m99", "m100"], "teams": ["Spain vs Belgium", "TBD"], "score": "TBD", "winner": null, "date": "Jul 14", "m_id": "m102", "note": "Winner m99 vs Winner m100"}
+    {"match": 1, "teams_from": ["m97", "m98"], "teams": ["TBD", "TBD"], "score": "TBD", "winner": null, "date": "Jul 13", "m_id": "m101", "note": "Winner m97 vs Winner m98"},
+    {"match": 2, "teams_from": ["m99", "m100"], "teams": ["TBD", "TBD"], "score": "TBD", "winner": null, "date": "Jul 14", "m_id": "m102", "note": "Winner m99 vs Winner m100"}
   ],
   "final": [
     {"teams_from": ["m101", "m102"], "teams": ["TBD", "TBD"], "score": "TBD", "winner": null, "date": "Jul 17", "note": "Winner m101 vs Winner m102 - FIFA World Cup Champion"}
   ],
-  "status": "Round of 16 - 6 of 8 matches completed, 2 remaining (Jul 7)",
-  "lastUpdated": "2026-07-06T20:00:00Z"
+  "status": "Round of 16 COMPLETE - Quarterfinals ready",
+  "lastUpdated": "2026-07-07T23:00:00Z",
+  "r16_summary": {
+    "winners": ["Morocco", "France", "Norway", "England", "Spain", "Belgium", "Argentina", "Switzerland"],
+    "complete": true
+  }
 }
